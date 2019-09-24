@@ -1,0 +1,50 @@
+C:\terraform\learn>t apply "terraform_plan"
+aws_cloudfront_origin_access_identity.r2g_oai: Creating...
+aws_iam_role.iam_for_lambda: Creating...
+aws_iam_role.iam_for_lambda: Creation complete after 1s [id=iam_for_lambda]
+aws_iam_policy_attachment.test_attach: Creating...
+aws_lambda_function.lambda_redirect: Creating...
+aws_cloudfront_origin_access_identity.r2g_oai: Creation complete after 1s [id=EHO5JMMUPYZ3E]
+aws_s3_bucket.r2g_exam_bucket: Creating...
+aws_iam_policy_attachment.test_attach: Creation complete after 0s [id=LambdaExecPolicy]
+aws_lambda_function.lambda_redirect: Still creating... [10s elapsed]
+aws_s3_bucket.r2g_exam_bucket: Still creating... [10s elapsed]
+aws_s3_bucket.r2g_exam_bucket: Creation complete after 11s [id=r2g.b33j.com]
+null_resource.upload_to_s3: Creating...
+null_resource.upload_to_s3: Provisioning with 'local-exec'...
+null_resource.upload_to_s3 (local-exec): Executing: ["cmd" "/C" "aws s3 sync C:\\terraform\\learn\\devops-exercise1\\StaticSite\\\\. s3://r2
+g.b33j.com --metadata-directive REPLACE --cache-control max-age=300  --profile r2gexam"]
+null_resource.upload_to_s3 (local-exec): Completed 493 Bytes/1.1 MiB (3.5 KiB/s) with 45 file(s) remaining
+null_resource.upload_to_s3 (local-exec): upload: devops-exercise1\StaticSite\chunk-map.json to s3://r2g.b33j.com/chunk-map.json
+null_resource.upload_to_s3 (local-exec): Completed 493 Bytes/1.1 MiB (3.5 KiB/s) with 44 file(s) remaining
+null_resource.upload_to_s3 (local-exec): Completed 595 Bytes/1.1 MiB (2.1 KiB/s) with 44 file(s) remaining
+	**SNIP - Uploading the rest of the StaticSite files**
+null_resource.upload_to_s3: Creation complete after 4s [id=6364248919894607350]
+aws_lambda_function.lambda_redirect: Creation complete after 17s [id=lambda_redirect_to_index]
+aws_cloudfront_distribution.r2g_exam_distribution: Creating...
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [10s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [20s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [30s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [40s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [50s elapsed]
+	**SNIP**
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [28m10s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [28m20s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [28m30s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [28m40s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Still creating... [28m50s elapsed]
+aws_cloudfront_distribution.r2g_exam_distribution: Creation complete after 28m50s [id=E2IY88J67CYUYM]
+aws_route53_record.r2g_domain_record: Creating...
+aws_route53_record.r2g_domain_record: Still creating... [10s elapsed]
+aws_route53_record.r2g_domain_record: Still creating... [20s elapsed]
+aws_route53_record.r2g_domain_record: Still creating... [30s elapsed]
+aws_route53_record.r2g_domain_record: Creation complete after 37s [id=Z3NATKOP8FXRSI_r2g.b33j.com._A]
+
+Apply complete! Resources: 8 added, 0 changed, 0 destroyed.
+
+The state of your infrastructure has been saved to the path
+below. This state is required to modify and destroy your
+infrastructure, so keep it safe. To inspect the complete state
+use the `terraform show` command.
+
+State path: terraform.tfstate
