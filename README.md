@@ -1,5 +1,4 @@
-# This repo is an exercise in me learning and using Terraform.
-___
+# This repo is an exercise in learning and using Terraform.
 
 ## Structure of repo:
 
@@ -11,7 +10,6 @@ ___
 
 **terraform_plan_output.txt** - a review of the plan to be executed
 
-___
 ## What it does:
 * Interacts with AWS.
 * Makes a zip of the lambda function node.js file (index.js).
